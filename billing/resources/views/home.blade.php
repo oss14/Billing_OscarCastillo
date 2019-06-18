@@ -29,7 +29,7 @@
     @foreach($users as $user)
         <div>
         <p>{{ $user->name }}</p>
-        <button class='btn-user-remove' data-user-id="{{ $user->id }}">ELIMINAR</button>
+        <button class='btnDeleteUser' dataUsuarioId="{{ $user->id }}">ELIMINAR</button>
         </div>
     @endforeach
 </div>

@@ -36760,10 +36760,11 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Función de Eliminar Usuario
+
 
 (function () {
-  var APP = {
+  var DeleteUser = {
     init: function init() {
       this.addEvents();
     },
@@ -36771,13 +36772,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
       document.addEventListener('click', function (event) {
         var target = event.target;
 
-        if (target.matches('.btn-user-remove')) {
-          var idUserToRemove = target.getAttribute('data-user-id');
+        if (target.matches('.btnDeleteUser')) {
+          var idUserDelete = target.getAttribute('dataUsuarioId');
           $.ajax({
             url: '/deleteUser',
             method: "POST",
             data: {
-              id: idUserToRemove
+              id: idUserDelete
             },
             success: function success(response) {
               console.log('response', response);
@@ -36785,7 +36786,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
               if (response === '200') {
                 location.reload();
               } else {
-                alert('ocurrio un error');
+                alert('Se dio un problema en la solicitud de eliminación de usuario');
               }
             }
           });
@@ -36793,8 +36794,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
       });
     }
   };
-  APP.init();
-})();
+  DeleteUser.init();
+})(); //Termino función de eliminar usuario.
+//Comienzo de función de eliminar Productos
 
 /***/ }),
 

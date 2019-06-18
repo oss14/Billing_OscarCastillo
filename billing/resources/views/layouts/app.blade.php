@@ -74,9 +74,15 @@
 
         <main class="py-4">
             @yield('content')
+            
             <div>
             @yield('users-section')
             </div>
+            
+            <div>
+            @yield('productos-section')
+            </div>
+        
         </main>
     </div>
 

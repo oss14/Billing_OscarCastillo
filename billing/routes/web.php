@@ -12,11 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/productos',function(){
+    return view('Productos');
+});
+
+Route::get('/usuarios',function(){
+    return view('Usuarios');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@showUsers')->name('home');
+Route::post('/deleteUser','UserReportsController@deleteUser');
 
-Route::post('/deleteUser','UserReports@deleteUser');
+Route::get('/productos','ProductosController@mostrarProductos')->name('Productos');
+Route::get('/usuarios','UserReportsController@showUsers')->name('Usuarios');
