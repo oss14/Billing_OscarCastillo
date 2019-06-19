@@ -27,10 +27,16 @@ Route::get('/usuarios',function(){
     return view('Usuarios');
 });
 
+Route::get('/welcome',function(){
+    return view('welcome');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@showUsers')->name('home');
 Route::post('/deleteUser','UserReportsController@deleteUser');
+Route::post('/updateProducto', 'ProductosController@updateProducto');
 
 Route::get('/productos','ProductosController@mostrarProductos')->name('Productos');
 Route::get('/usuarios','UserReportsController@showUsers')->name('Usuarios');
+

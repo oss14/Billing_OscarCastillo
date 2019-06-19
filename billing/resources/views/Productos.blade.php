@@ -10,8 +10,8 @@
         <br>
         <p> Detalle: </p>
         <p>{{ $productos->detalle_producto }}</p>
-        <label for="productoUpdate">Ingrese la modificación que desea relizar al producto</label>
-        <input type="text" id="productoUpdate">
+        <label for="productosUpdate">Ingrese la modificación que desea relizar al producto</label>
+        <input type="text" class='productoUpdate' txtProductoUpdate="{{$productos->detalle_producto }}">
         <button class='buttonProductosModificar' productoInfoId="{{$productos->id}}">Modificar</button>
         <br>
         <button class='buttonProductoEliminar' productoInfoId="{{ $productos->id }}">Eliminar</button>

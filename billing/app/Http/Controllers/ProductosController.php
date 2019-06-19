@@ -12,7 +12,13 @@ class ProductosController extends Controller
         return view('Productos', ['tbl_productos' => $productos]);
     }
 
-    public function updateProducto(){
-        $productos = DB::select('UPDATE tbl_productos SET');
+    public function updateProducto(Request $request){
+
+        //Consulta mala: $productos = DB::update('UPDATE tbl_productos SET detalle_producto = '.'$request->text'.' WHERE id=1');
+
+        DB::table('tbl_productos')
+            ->where('id', $request->id)
+            ->update(['detalle_producto' => $request->text]);
+        return 200;
     }
 }
