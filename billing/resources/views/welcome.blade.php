@@ -81,12 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Página Programación en Cuarta Generación Dos
                 </div>
 
                 <div class="links">
                     <a href="{{ url('/productos') }}">Productos</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="{{ url('/usuarios') }}">Usuarios</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>

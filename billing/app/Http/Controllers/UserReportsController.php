@@ -7,19 +7,19 @@ use Illuminate\Support\Facades\DB;
 
 class UserReportsController extends Controller 
 {
-  //Mostrar Usuario
+  //Funcion de Mostrar Usuarios
   public function showUsers()
   {
       $users = DB::select('select * from users');
-      return view('home', ['users' => $users]);
+      return view('Usuarios', ['users' => $users]);
   }
 
-  //Eliminar Usuario
+  //Funcion de Eliminar Usuario
   public function deleteUser(Request $request){
     DB::select('DELETE FROM users WHERE id='.$request->id.'');
     
     return 200;
   }
 
-  //Falta el de modificar
+  //Funcion de Modificar Usuario
 }

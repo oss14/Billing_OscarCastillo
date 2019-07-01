@@ -1,42 +1,25 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('/auth/login');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/productos',function(){
-    return view('Productos');
-});
-
-Route::get('/usuarios',function(){
-    return view('Usuarios');
-});
-
-Route::get('/welcome',function(){
-    return view('welcome');
-});
+//Rutas de las Vistas
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@showUsers')->name('home');
-Route::post('/deleteUser','UserReportsController@deleteUser');
-Route::post('/updateProducto', 'ProductosController@updateProducto');
+Route::get('/', function(){
+    return redirect('login');
+});
 
-Route::get('/productos','ProductosController@mostrarProductos')->name('Productos');
+
+Route::get('/home',function(){
+    return view('home');
+});
+
+
+
+// Funciones de los Usuarios
 Route::get('/usuarios','UserReportsController@showUsers')->name('Usuarios');
+Route::post('/deleteUser','UserReportsController@deleteUser');
+
+//Funciones de los productos
+Route::get('/productos','ProductosController@mostrarProductos')->name('Productos');
+Route::post('/updateProducto', 'ProductosController@updateProducto');
 

@@ -1,5 +1,5 @@
 require('./bootstrap');
-
+ 
 //Función de Eliminar Usuario
 (function () {
     var DeleteUser = {
@@ -52,7 +52,7 @@ require('./bootstrap');
             document.addEventListener('click', function (event) {
             
                 let target = event.target;
-                if (target.matches('.buttonProductosModificar')) {
+                if (target.matches('#buttonProductosModificar')) {
 
                     var idProductoModificar = target.getAttribute('productoinfoid');
                     var txtInpDetalleProducto= this.cacheElements.$inpName.val();
@@ -61,7 +61,7 @@ require('./bootstrap');
                         method: "POST",
                         data: {
                             id: idProductoModificar, 
-                            text: txtInpDetalleProducto
+                            text: txtInpDetalleProducto 
                         },
                         success: function(response){
                             console.log('response', response);
@@ -77,7 +77,7 @@ require('./bootstrap');
         },
 
         cacheElements:{
-            $inpName:$('.productoUpdate')
+            $inpName:$('#productoUpdate')
         }
 
     }

@@ -24,12 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('auth.login');
+        return view('welcome');
     }
 
-    public function showUsers()
-    {
-        $users = DB::select('select * from users');
-        return view('home', ['users' => $users]);
-    }
 }

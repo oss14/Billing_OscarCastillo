@@ -36810,7 +36810,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Funció
       document.addEventListener('click', function (event) {
         var target = event.target;
 
-        if (target.matches('.buttonProductosModificar')) {
+        if (target.matches('#buttonProductosModificar')) {
           var idProductoModificar = target.getAttribute('productoinfoid');
           var txtInpDetalleProducto = this.cacheElements.$inpName.val();
           $.ajax({
@@ -36834,7 +36834,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Funció
       }.bind(this));
     },
     cacheElements: {
-      $inpName: $('.productoUpdate')
+      $inpName: $('#productoUpdate')
     }
   };
   ModificarProducto.init();
