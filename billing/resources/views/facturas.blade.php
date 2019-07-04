@@ -16,7 +16,7 @@
                 
             <h2>Ingrese la modificación que desea realizar al detalle de la factura:</h2>
                 <input type="text" id="facturaUpdateDetalle" class="form-control">
-                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+               
             <br>
             <button id="buttonFacturasModificar" class= "btn btn-primary" facturaModificarId="{{ $facturas->id_facturas }}">Modificar</button>
             <button id="buttonFacturasEliminar" class= "btn btn-danger" facturaEliminarId="{{ $facturas->id_facturas }}">Eliminar</button>

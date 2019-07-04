@@ -36966,12 +36966,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Funció
         if (target.matches('#buttonFacturasModificar')) {
           var idFacturaUpdate = target.getAttribute('facturaModificarId');
           var txtDetalleFacturaUpdate = this.cacheElementsFacturasUpdate.$inpFacturaDetalleUpdate.val();
-          var txtTokenUpdateFactura = this.cacheElementsFacturasUpdate.$inpTokenSeguridad.val();
           $.ajax({
             url: '/updateFactura',
             method: 'POST',
             data: {
-              _token: txtTokenUpdateFactura,
               IdFacturaUpdate: idFacturaUpdate,
               DetalleFacturaUpdate: txtDetalleFacturaUpdate
             },
@@ -36989,8 +36987,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Funció
       }.bind(this));
     },
     cacheElementsFacturasUpdate: {
-      $inpFacturaDetalleUpdate: $('#facturaUpdateDetalle'),
-      $inpTokenSeguridad: $('#signup-token')
+      $inpFacturaDetalleUpdate: $('#facturaUpdateDetalle')
     }
   };
   ModificarFactura.init6();
