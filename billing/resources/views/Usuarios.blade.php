@@ -2,12 +2,28 @@
 
 @section('users-section')
 <div class="container">
-    <p> Lista de Usuarios </p>
+    <h1 > Lista de Usuarios </h1>
 
     @foreach($users as $user)
         <div>
+            <h2>Nombre del Usuario:</h2>
             <p>{{ $user->name }}</p>
-            <button class='btnDeleteUser' dataUsuarioId="{{ $user->id }}">ELIMINAR</button>
+            <h3>Correo del Usuario </h3>
+            <p>{{ $user->email }}</p>
+            <br>
+            
+            <h4>Ingrese la modificación que desea relizar al usuario</h4>
+           
+            <label for="usuarioUpdateName">Nombre</label>
+                <input type="text" id='usuarioUpdateName' class="form-control">
+            <label for="usuarioUpdateEmail">Correo</label>
+                <input type="text" id='usuarioUpdateEmail' class="form-control">
+            <br>
+            <button id="btnUpdateUser" class="btn btn-primary" dataUsuarioId="{{ $user->id }}">Modificar</button>
+            <button id="btnDeleteUser" class="btn btn-danger" dataUsuarioId= "{{ $user->id }}">Eliminar</button>
+            <br>
+            <br>
+            
         </div>
     @endforeach 
 </div>

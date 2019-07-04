@@ -22,4 +22,10 @@ class UserReportsController extends Controller
   }
 
   //Funcion de Modificar Usuario
+  public function updateUser(Request $request){
+    DB::table('users')
+        ->where('id', $request->id)
+        ->update(['name' => $request->txtNombreUsuario , 'email' =>$request->txtEmailUsuario]);
+    return 200;
+}
 }

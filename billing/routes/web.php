@@ -18,8 +18,10 @@ Route::get('/home',function(){
 // Funciones de los Usuarios
 Route::get('/usuarios','UserReportsController@showUsers')->name('Usuarios');
 Route::post('/deleteUser','UserReportsController@deleteUser');
+Route::post('/updateUsuario','UserReportsController@updateUser');
 
 //Funciones de los productos
 Route::get('/productos','ProductosController@mostrarProductos')->name('Productos');
 Route::post('/updateProducto', 'ProductosController@updateProducto');
+Route::post('/deleteProducto','ProductosController@deleteProducto');
 

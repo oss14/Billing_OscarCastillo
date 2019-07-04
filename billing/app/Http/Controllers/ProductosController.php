@@ -13,6 +13,12 @@ class ProductosController extends Controller
             return view('Productos', ['tbl_productos' => $productos]);
         }
 
+    //Funcion de Eliminar Productos
+    public function deleteProducto(){
+        DB::select('DELETE FROM tbl_productos WHERE id='.$request->id.'');
+        return 200;
+    }
+
     //Funcion de Modificar los productos
         public function updateProducto(Request $request){
             DB::table('tbl_productos')
