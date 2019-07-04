@@ -36917,6 +36917,84 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Funció
   };
   ModificarProducto.init4();
 })(); //Termino de función Modificar Productos
+//Comienzo de la funcion de Eliminar Facturas
+
+
+(function () {
+  var EliminarFactura = {
+    init5: function init5() {
+      this.addEvents5();
+    },
+    addEvents5: function addEvents5() {
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+
+        if (target.matches('#buttonFacturasEliminar')) {
+          var idFacturaDelete = target.getAttribute('facturaEliminarId');
+          $.ajax({
+            url: '/deleteFactura',
+            method: "POST",
+            data: {
+              IdFacturaUpdate: idFacturaDelete
+            },
+            success: function success(response) {
+              if (response === '200') {
+                location.reload();
+              } else {
+                alert('No se pudo ejecutar Eliminar Factura');
+              }
+            }
+          });
+        }
+      });
+    }
+  };
+  EliminarFactura.init5();
+})(); //Termino función de Eliminar Factura
+//Comienzo de función Modificar Factura
+
+
+(function () {
+  var ModificarFactura = {
+    init6: function init6() {
+      this.addEvents6();
+    },
+    addEvents6: function addEvents6() {
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+
+        if (target.matches('#buttonFacturasModificar')) {
+          var idFacturaUpdate = target.getAttribute('facturaModificarId');
+          var txtDetalleFacturaUpdate = this.cacheElementsFacturasUpdate.$inpFacturaDetalleUpdate.val();
+          var txtTokenUpdateFactura = this.cacheElementsFacturasUpdate.$inpTokenSeguridad.val();
+          $.ajax({
+            url: '/updateFactura',
+            method: 'POST',
+            data: {
+              _token: txtTokenUpdateFactura,
+              IdFacturaUpdate: idFacturaUpdate,
+              DetalleFacturaUpdate: txtDetalleFacturaUpdate
+            },
+            success: function success(response) {
+              console.log('response', response);
+
+              if (response === '200') {
+                location.reload();
+              } else {
+                alert('Se dio un error y no se pudo realizar la actualización');
+              }
+            }
+          });
+        }
+      }.bind(this));
+    },
+    cacheElementsFacturasUpdate: {
+      $inpFacturaDetalleUpdate: $('#facturaUpdateDetalle'),
+      $inpTokenSeguridad: $('#signup-token')
+    }
+  };
+  ModificarFactura.init6();
+})(); //Termino funcion de modificar factura
 
 /***/ }),
 

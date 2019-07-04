@@ -85,6 +85,10 @@
             @yield('productos-section')
             </div>
 
+            <div>
+            @yield('facturas-section')
+            </div>
+
         </main>
     </div>
 

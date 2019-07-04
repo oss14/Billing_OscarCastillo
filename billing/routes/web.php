@@ -20,8 +20,12 @@ Route::get('/usuarios','UserReportsController@showUsers')->name('Usuarios');
 Route::post('/deleteUser','UserReportsController@deleteUser');
 Route::post('/updateUsuario','UserReportsController@updateUser');
 
-//Funciones de los productos
+//Funciones de los Productos
 Route::get('/productos','ProductosController@mostrarProductos')->name('Productos');
 Route::post('/updateProducto', 'ProductosController@updateProducto');
 Route::post('/deleteProducto','ProductosController@deleteProducto');
 
+//Funcions de las Facturas
+Route::get('/facturas','FacturasController@showFacturas')->name('facturas');
+Route::post('/deleteFactura','FacturasController@deleteFacturas');
+Route::post('/updateFactura', 'FacturasController@updateFacturas');
