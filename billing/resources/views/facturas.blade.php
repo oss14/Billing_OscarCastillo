@@ -1,10 +1,26 @@
 @extends('layouts.app')
 
 @section('facturas-section')
+
+<div class="col-sm-12">
+
+@if(session()->get('success'))
+    <div class="alert alert-success">
+    {{ session()->get('success') }}  
+    </div>
+@endif
+</div>
+
 <div>
     <div class="container">
-    <h1>Información sobre las facturas</h1>
     
+    <h1 class="text-center">Información sobre las facturas</h1> 
+    
+    <div class="text-right">
+        <a href="{{ route('addfacturas.create') }}" class="btn btn-success">Nueva Factura</a>
+    </div>
+        
+
         @foreach($tbl_facturas as $facturas)
             <div>
 

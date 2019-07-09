@@ -27,6 +27,7 @@ class VerifyCsrfToken extends Middleware
         'deleteProducto',
         'updateProducto',
         
+
         //Facturas
         'deleteFactura',
         'updateFactura',

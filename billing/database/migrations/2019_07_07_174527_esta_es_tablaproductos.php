@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TablaProductos extends Migration
+class EstaEsTablaproductos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class TablaProductos extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_Productos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('tbl_producto', function (Blueprint $table) {
+            $table->bigIncrements('id_producto');
             $table->string('nombre_producto', 100);
             $table->string('detalle_producto', 100);
+            $table->float('precio_producto', 8, 2);
             $table->bigInteger('codigo_producto');
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class TablaProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_Productos');
+        Schema::dropIfExists('tbl_producto');
     }
 }

@@ -14,7 +14,7 @@ class FacturasController extends Controller
         }
 
     //Funcion de Eliminar facturas
-    public function deleteFacturas(){
+    public function deleteFacturas(Request $request){
         DB::select('DELETE FROM tbl_facturas WHERE id_facturas='.$request->id.'');
         return 200;
     }
