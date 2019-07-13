@@ -33,8 +33,10 @@
         <h3 for="productosUpdate">Ingrese la modificación que desea relizar al producto</h3>
             <input type="text" id='productoUpdate'class="form-control">
         <br>
+        <div class="text-center">
         <button id= "buttonProductosModificar" class= "btn btn-primary"  productoInfoIdUpdate="{{$productos->id_producto}}">Modificar</button>  
         <button id="buttonProductoEliminar" class= "btn btn-danger" productoInfoIdEliminar="{{ $productos->id_producto}}">Eliminar</button>
+        </div>
         <br>
         <br>
         </div>

@@ -34,8 +34,10 @@
                 <input type="text" id="facturaUpdateDetalle" class="form-control">
                
             <br>
+            <div class="text-center">
             <button id="buttonFacturasModificar" class= "btn btn-primary" facturaModificarId="{{ $facturas->id_facturas }}">Modificar</button>
             <button id="buttonFacturasEliminar" class= "btn btn-danger" facturaEliminarId="{{ $facturas->id_facturas }}">Eliminar</button>
+            </div>
             <br>
             <br>
             </div>

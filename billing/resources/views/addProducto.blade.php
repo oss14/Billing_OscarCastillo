@@ -35,8 +35,10 @@
               <label for="codigo_producto">Código del Producto:</label>
               <input type="text" class="form-control" name="codigo_producto"/>
           </div>
-                                 
-          <button type="submit" class="btn btn-primary"> Agregar Producto</button>
+          <div class="text-center">
+            <button type="submit" class="btn btn-info"> Agregar Producto</button>
+          </div>
+          
       </form>
   </div>
 </div>

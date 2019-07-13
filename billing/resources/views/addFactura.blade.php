@@ -26,8 +26,9 @@
               <label for="codigo_factura">Código de la factura:</label>
               <input type="text" class="form-control" name="codigo_factura"/>
           </div>
-
-          <button type="submit" class="btn btn-primary"> Agregar Factura</button>
+          <div class="text-center">
+          <button type="submit" class="btn btn-info"> Agregar Factura</button>
+          </div>
       </form>
   </div>
 </div>

@@ -2,7 +2,7 @@
 
 @section('users-section')
 <div class="container">
-    <h1 > Lista de Usuarios </h1>
+    <h1 class="text-center"> Lista de Usuarios </h1>
 
     @foreach($users as $user)
         <div>
@@ -19,8 +19,10 @@
             <label for="usuarioUpdateEmail">Correo</label>
                 <input type="text" id='usuarioUpdateEmail' class="form-control">
             <br>
+            <div class="text-center">
             <button id="btnUpdateUser" class="btn btn-primary" dataUsuarioId="{{ $user->id }}">Modificar</button>
             <button id="btnDeleteUser" class="btn btn-danger" dataUsuarioId= "{{ $user->id }}">Eliminar</button>
+            </div>
             <br>
             <br>
             
